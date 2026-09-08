@@ -37,8 +37,9 @@ This project demonstrates the practical use of **Machine Learning, Python, and a
 
 * HTML
 * CSS
-* JavaScript / React.js
-
+* JavaScript 
+* Python
+  
 ### Tools & Platforms
 
 * Git
