@@ -98,4 +98,4 @@ These metrics help measure how effectively the model predicts loan approval outc
 
 This project is open-sourse and available under the MIT License.
 
-© 2026 Hearthline. Designed & Developed by Pushpa C.
+© 2026 LoanLens. Designed & Developed by Pushpa C.
