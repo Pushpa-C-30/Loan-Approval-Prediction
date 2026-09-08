@@ -23,7 +23,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch('/api/analyze', {
+      const response = await fetch(import.meta.env.VITE_API_URL || '/api/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -32,8 +32,14 @@ function App() {
           monthlyIncome: Number(form.monthlyIncome)
         })
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Unable to analyze this application.');
+      const responseText = await response.text();
+      let data;
+      try {
+        data = responseText ? JSON.parse(responseText) : {};
+      } catch {
+        throw new Error(`The analysis service returned an invalid response (${response.status}).`);
+      }
+      if (!response.ok) throw new Error(data.error || `Unable to analyze this application (${response.status}).`);
       setResult(data);
     } catch (requestError) {
       setError(requestError.message);

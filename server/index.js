@@ -1,11 +1,16 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const app = express();
 const port = process.env.PORT || 3001;
+const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.resolve(currentDirectory, '..');
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(projectRoot, 'dist')));
 
 function analyzeLoan({ loanAmount, creditScore, monthlyIncome }) {
   const checks = [
@@ -59,6 +64,10 @@ app.post('/api/analyze', (request, response) => {
   }
 
   return response.json(analyzeLoan({ loanAmount, creditScore, monthlyIncome }));
+});
+
+app.get('*', (_request, response) => {
+  response.sendFile(path.join(projectRoot, 'dist', 'index.html'));
 });
 
 app.listen(port, () => {
