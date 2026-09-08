@@ -2,6 +2,12 @@
 
 A Machine Learning web application that predicts whether a **loan application is likely to be approved or rejected** based on applicant information.
 
+## 🌐 Live Demo
+
+Live Website : https://loan-approval-prediction-7-2mob.onrender.com
+
+Github Repository : https://github.com/Pushpa-C-30/Loan-Approval-Prediction
+
 ##  Introduction
 
 Loan Approval Prediction is a machine learning project designed to help predict loan approval outcomes using applicant-related features. The model analyzes the provided information and produces a prediction that can be used as a decision-support tool.
@@ -90,4 +96,6 @@ These metrics help measure how effectively the model predicts loan approval outc
 
 ## 📄 License
 
-This project is intended for educational purposes.
+This project is open-sourse and available under the MIT License.
+
+© 2026 Hearthline. Designed & Developed by Pushpa C.
