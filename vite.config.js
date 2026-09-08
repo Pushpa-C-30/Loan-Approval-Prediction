@@ -8,5 +8,8 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3001'
     }
+  },
+  preview: {
+    allowedHosts: ['loan-approval-prediction-6-ik10.onrender.com']
   }
 });
